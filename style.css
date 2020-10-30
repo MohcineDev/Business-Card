@@ -1,0 +1,206 @@
+ body {
+     --col: rgb(21, 28, 38);
+     --col0: rgb(28, 182, 59);
+     background-color: var(--col);
+     color: var(--col);
+     font-family: Arial, Helvetica, sans-serif;
+     overflow: hidden;
+ }
+
+ a {
+     text-decoration: none;
+     color: #ccc;
+ }
+
+ header {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     height: 100vh;
+     flex-wrap: wrap;
+     position: relative;
+ }
+
+ #front, #back {
+     background-color: #fff;
+     width: 500px;
+     height: 270px;
+     position: relative;
+     border-radius: 4px;
+     margin: 0 5px;
+ }
+
+ .leftEdge, .rightEdge {
+     background-color: var(--col0);
+     width: 15px;
+     height: 60%;
+     position: absolute;
+     top: 20%;
+ }
+
+ .leftEdge {
+     left: 0px;
+     border-radius: 0 20px 20px 0;
+ }
+
+ .rightEdge {
+     right: 0;
+     border-radius: 20px 0 0 20px;
+ }
+
+ .info {
+     margin-top: 165px;
+     display: flex;
+     justify-content: center;
+     text-transform: uppercase;
+ }
+
+ .info p {
+     margin: -10px;
+     font-size: 1.3em;
+ }
+
+ .info p span {
+     font-weight: 600;
+     color: var(--col0);
+ }
+
+ .info::after, .info::before {
+     content: "";
+     width: 160px;
+     height: 4px;
+     background-color: var(--col);
+     margin: 0 20px;
+     border-radius: 4px;
+ }
+
+ .site {
+     background-color: var(--col);
+     color: rgb(230, 230, 230);
+     width: 250px;
+     text-align: center;
+     border-radius: 10px;
+     position: absolute;
+     bottom: 20px;
+     left: 125px;
+ }
+
+ .site p {
+     margin: 0;
+     font-size: 0.8em;
+     padding: 2px;
+ }
+
+ #canvas0 {
+     position: absolute;
+     top: 55px;
+     left: 100px;
+ }
+
+ #back {
+     display: flex;
+ }
+
+ #back .logo {
+     width: 250px;
+ }
+
+ .logo canvas {
+     position: absolute;
+     left: -25px;
+     top: 60px;
+ }
+
+ .logo p {
+     position: absolute;
+     top: 140px;
+     font-size: 1.3em;
+     left: 69px;
+     text-transform: uppercase;
+ }
+
+ .logo p span {
+     font-weight: 600;
+     color: var(--col0);
+ }
+ 
+
+ #back .details {
+     width: 250px;
+ }
+
+ .name {
+     margin: 15px 0 0 45px;
+ }
+
+ .name h2, .name p {
+     text-transform: uppercase;
+     margin: 0;
+ }
+
+ .name h2 {
+     color: var(--col0);
+ }
+
+ .name p {
+     font-size: 0.8em;
+ }
+
+ .details #canvas2, .details #canvas3 {
+     position: absolute;
+ }
+
+ .details #canvas3 {
+     top: 68px;
+ }
+
+ .details .infos {
+     margin: 25px 0 0 45px;
+ }
+
+ .infos div p {
+     font-size: 0.8em;
+     margin: 10px;
+     font-weight: 700;
+ }
+
+ .infos div {
+     display: flex;
+     align-items: center;
+ }
+
+ i {
+     color: var(--col0);
+     font-size: 1.2em;
+     margin: 0;
+ }
+
+ .changeColor {
+     position: absolute;
+     top: 10px;
+     left: calc(50% - 70px);
+     z-index: 10;
+ }
+
+ .onGitHub {
+     position: absolute;
+     bottom: 20px;
+     color: var(--col0);
+     left: calc(50% - 61px);
+ }
+
+ .onGitHub a,  .onGitHub i {
+     color: var(--col0);
+ }
+
+ .move {
+     animation-name: moving;
+     animation-iteration-count: infinite;
+     animation-duration: 5s;
+ }
+
+ @keyframes moving {
+     50% {
+         left: calc(50% - 40px);
+     }
+ }
