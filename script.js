@@ -1,16 +1,21 @@
+const body = document.querySelector('body')
 const green = document.querySelector('.leftEdge')
 const dark = document.querySelector('.site')
+//get input color 
+const firstColor = document.querySelector('#firstColor')
+const secondColor = document.querySelector('#secondColor')
+//initialize the inputs when the page reloaded
+firstColor.value ='rgb(0,0,0)'
+secondColor.value ='rgb(0,0,0)'
 
+const canvas2 = document.getElementById('canvas2')
+const canvas3 = document.getElementById('canvas3')
+
+//get the colors from css
 let darkColor = getComputedStyle(dark)
 let greencolor = getComputedStyle(green)
 
-const firstColor = document.querySelector('#firstColor')
-const secondColor = document.querySelector('#secondColor')
-
-
-const body = document.querySelector('body') 
-
-
+//change the var color in css with the selected one
 firstColor.addEventListener('change', function () {
     body.style.setProperty('--col', firstColor.value)
 
@@ -23,7 +28,6 @@ secondColor.addEventListener('change', function () {
     body.style.setProperty('--col0', secondColor.value)
     drawlogo(ctx)
     drawlogo(ctx1)
-
 })
 
 //--------------------
@@ -34,6 +38,7 @@ const canvas1 = document.querySelector('#canvas1')
 const ctx1 = canvas1.getContext('2d')
 
 function drawlogo(c) {
+    //add .backgroundColor here to change it when we call this method in input color listener
     c.strokeStyle = darkColor.backgroundColor
     c.beginPath()
     c.moveTo(175, 10)
@@ -66,10 +71,6 @@ drawlogo(ctx)
 drawlogo(ctx1)
 //---- Line -----------
 
-
-const canvas2 = document.getElementById('canvas2')
-const canvas3 = document.getElementById('canvas3')
-
 let ctx2 = canvas2.getContext('2d')
 let ctx3 = canvas3.getContext('2d')
 
@@ -84,14 +85,13 @@ function drawPath() {
     ctx2.lineWidth = 2
     ctx2.stroke()
 
-    //---- Line -----------
-
+    //---- Details Line -----------
 
     ctx3.beginPath()
-    ctx3.moveTo(42, 32)
-    ctx3.lineTo(3, 32)
-    ctx3.lineTo(3, 138)
-    ctx3.lineTo(42, 138)
+    ctx3.moveTo(42, 34)
+    ctx3.lineTo(3, 34)
+    ctx3.lineTo(3, 142)
+    ctx3.lineTo(42, 142)
     ctx3.strokeStyle = darkColor.backgroundColor
 
     ctx3.lineWidth = 2
@@ -99,3 +99,7 @@ function drawPath() {
 }
 drawPath()
 
+/*
+https://kit.fontawesome.com/a076d05399.js" 
+https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js
+*/
