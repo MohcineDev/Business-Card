@@ -4,7 +4,9 @@
      background-color: var(--col);
      color: var(--col);
      font-family: Arial, Helvetica, sans-serif;
-     overflow: hidden;
+     overflow-y: hidden;
+     display: grid;
+     grid-template-columns: repeat(2, 100vw);
  }
 
  a {
@@ -191,7 +193,7 @@
 
  .onGitHub {
      position: absolute;
-     bottom: 20px;
+     bottom: 40px;
      color: var(--col0);
      left: calc(50% - 61px);
  }
@@ -215,3 +217,190 @@
  /* add some responsiveness*/
 
  @media screen and (max-width: 560px) {}
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+ * {
+     --dark: #393939;
+     --red: #d12229;
+ }
+
+
+ .business2 {
+     display: flex;
+     align-items: center;
+     height: 100vh;
+     justify-content: center;
+     background-color: #101020;
+     font-family: Roboto, Arial, Helvetica, sans-serif;
+ }
+
+ .business2 .front,
+ .business2 .back {
+     background-color: var(--dark);
+     width: 280px;
+     height: 480px;
+     margin: 20px;
+     border-radius: 25px;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .business2 svg {
+     width: 50px;
+ }
+
+ .business2 h1,
+ .business2 h2,
+ .business2 p {
+     margin: 0;
+     color: #eee;
+ }
+
+ .business2 .red {
+     height: 35%;
+     background-color: var(--red);
+ }
+
+ .business2 .head {
+     display: flex;
+     justify-content: center;
+     padding: 25px 0;
+ }
+
+ .business2 .head img {
+     width: 40px;
+ }
+
+ .business2 .head>div {
+     text-align: center;
+     margin: 0 10px;
+     text-transform: uppercase;
+ }
+
+ .business2 .head>div p {
+     font-size: .8rem;
+     font-weight: 600;
+ }
+
+ .business2 .avatar {
+     position: absolute;
+     width: 50%;
+     left: 50%;
+     top: 100px;
+     transform: translate(-50%);
+     text-align: center;
+ }
+
+ .business2 .img {
+     background-color: #bfc2c7;
+     padding: 10px;
+     box-sizing: border-box;
+     border-radius: 50%;
+     border: 6px solid var(--dark);
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .business2 .img img {
+     width: 80%;
+     padding: 10px 0;
+ }
+
+ .business2 .avatar p:nth-of-type(1) {
+     text-transform: uppercase;
+     font-weight: 900;
+ }
+
+ .business2 .infos {
+     position: absolute;
+     bottom: 5%;
+     left: 5%;
+ }
+
+ .business2 .infos>div {
+     display: flex;
+     margin: 5px;
+ }
+
+ .business2 .infos>div svg {
+     width: 25px;
+     height: 25px;
+     margin-right: 10px;
+     background-color: var(--red);
+     padding: 8px;
+     border-radius: 7px;
+ }
+
+ .business2 .infos>div p {
+     font-size: .8rem;
+     margin: 5px 0;
+     font-weight: 500;
+ }
+
+ /* back*/
+ .business2 .back .top {
+     width: 100%;
+     box-sizing: border-box;
+     height: 70%;
+     background: url("e.webp") center;
+     filter: contrast(160%);
+     position: relative;
+ }
+
+ .business2 .back .top::after {
+     content: "";
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     z-index: 10;
+     background: linear-gradient(rgba(71, 11, 11, 0.8), rgba(240, 8, 8, 0.5));
+ }
+
+ .business2 .back .top {
+     position: relative;
+ }
+
+ .business2 .back .top div img {
+     width: 40px;
+     margin: 10px;
+ }
+
+ .business2 .back .top div {
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     top: 40%;
+     left: 19%;
+     z-index: 11;
+     filter: contrast(80%);
+     text-transform: uppercase;
+ }
+
+ .webicon {
+     background-color: var(--dark);
+     border-radius: 50%;
+     width: 70%;
+     padding: 20px 0;
+     position: absolute;
+     top: calc(70% - 40px);
+     left: 15%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .webicon div {
+     background-color: var(--red);
+     border-radius: 50%;
+     padding: 5px 4px 2px 5px;
+ }
+
+ .business2 .back>p {
+     text-align: center;
+     margin-top: 30%;
+     color: var(--red);
+ }
