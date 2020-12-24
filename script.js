@@ -4,9 +4,11 @@ const dark = document.querySelector('.site')
 //get input color 
 const firstColor = document.querySelector('#firstColor')
 const secondColor = document.querySelector('#secondColor')
+const next = document.querySelector('#next')
+const prev = document.querySelector('#prev')
 //initialize the inputs when the page reloaded
-firstColor.value ='rgb(0,0,0)'
-secondColor.value ='rgb(0,0,0)'
+firstColor.value = 'rgb(0,0,0)'
+secondColor.value = 'rgb(0,0,0)'
 
 const canvas2 = document.getElementById('canvas2')
 const canvas3 = document.getElementById('canvas3')
@@ -99,7 +101,25 @@ function drawPath() {
 }
 drawPath()
 
+
+//move to next
+let width = innerWidth
+
+next.addEventListener('click', () => {
+    scroll(width)
+})
+
+prev.addEventListener('click', () => {
+    scroll(0)
+})
+
+function scroll(to){
+    scrollTo({
+        left:to,
+        behavior:"smooth"
+    })
+}
 /*
-https://kit.fontawesome.com/a076d05399.js" 
+https://kit.fontawesome.com/a076d05399.js"
 https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js
 */

@@ -11,3 +11,6 @@ this done using :
 ~ input type color to change the two main colors
 
 ~ font awesome icons
+
+
+- some updates are coming

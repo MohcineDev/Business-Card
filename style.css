@@ -21,6 +21,8 @@ a {
     text-decoration: none;
 }
 
+/* inspired from */
+
 .credit {
     position: absolute;
     top: 15px;
@@ -33,7 +35,7 @@ a {
 }
 
 .credit-horizontal {
-    right: 10px;
+    right: 5%;
 }
 
 .credit-vertical {
@@ -77,38 +79,57 @@ a {
 .credit:hover .test {
     left: 0;
 }
+
 /*  */
+
 #prev, #next {
     border: 2px solid #ddd;
-    top: 50%;
+    top: 20%;
     opacity: .5;
     padding: 20px;
     background-color: #888;
+    z-index: 10;
     border-radius: 5px;
+    cursor: pointer;
+    transition: .6s;
 }
+
 #prev:hover, #next:hover {
-opacity: 1;
+    opacity: .8;
 }
-#prev {
+
+#next {
     right: 5%;
     position: absolute;
 }
- 
+#prev {
+    right: -5%;
+    position: absolute;
+}
+
 #prev::after, #next::after {
     content: "";
     border: 15px solid;
     box-sizing: border-box;
     border-color: #fff transparent transparent transparent;
-    z-index: 20;
     width: 15px;
     height: 15px;
     position: absolute;
     top: 4px;
 }
-#prev::after {
+
+#next::after {
     transform: rotate(-90deg);
+    right: -5px;
 }
+
+#prev::after {
+    transform: rotate(90deg);
+    left: -5px;
+}
+
 /*  */
+
 header {
     display: flex;
     align-items: center;
