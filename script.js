@@ -1,5 +1,6 @@
 const body = document.querySelector('body')
-const green = document.querySelector('.leftEdge')
+//get the span element 'LUXE'
+const green = document.querySelector('#front>div:nth-child(1) p span')
 const dark = document.querySelector('.site')
 //get input color 
 const firstColor = document.querySelector('#firstColor')
@@ -13,7 +14,7 @@ secondColor.value = 'rgb(0,0,0)'
 const canvas2 = document.getElementById('canvas2')
 const canvas3 = document.getElementById('canvas3')
 
-//get the colors from css
+//get the styles from css
 let darkColor = getComputedStyle(dark)
 let greencolor = getComputedStyle(green)
 
@@ -53,7 +54,7 @@ function drawlogo(c) {
     c.closePath()
     c.lineWidth = 6
     c.stroke()
-    c.strokeStyle = greencolor.backgroundColor
+    c.strokeStyle = greencolor.color
     c.beginPath()
     c.moveTo(160, 20)
     c.lineTo(130, 20)

@@ -5,20 +5,23 @@
 }
 
 body {
-    background-color: var(--col);
     color: var(--col);
-    font-family: Arial, Helvetica, sans-serif;
     overflow-y: hidden;
+    background-color: var(--col);
+    font-family: Arial, Helvetica, sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 100vw);
     --col: rgb(21, 28, 38);
     --col0: rgb(28, 182, 59);
-    margin: 0;
     position: relative;
 }
 
 a {
     text-decoration: none;
+}
+
+body, h2, p {
+    margin: 0;
 }
 
 /* inspired from */
@@ -102,6 +105,7 @@ a {
     right: 5%;
     position: absolute;
 }
+
 #prev {
     right: -5%;
     position: absolute;
@@ -130,7 +134,7 @@ a {
 
 /*  */
 
-header {
+.business-hor {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -149,42 +153,45 @@ header {
     box-shadow: 0 0 15px #000;
 }
 
-.leftEdge, .rightEdge {
+#front::after, #front::before {
+    content: "";
     background-color: var(--col0);
     width: 15px;
     height: 60%;
     position: absolute;
     top: 20%;
+    right: 0;
+    border-radius: 20px 0 0 20px;
+    z-index: 2;
 }
 
-.leftEdge {
+#front::before {
     left: 0px;
     border-radius: 0 20px 20px 0;
 }
 
-.rightEdge {
-    right: 0;
+#front::after {
+    right: 0px;
     border-radius: 20px 0 0 20px;
 }
 
-.info {
+#front>div:nth-child(1) {
     margin-top: 165px;
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
 }
 
-.info p {
+#front>div:nth-child(1) p {
     margin: -10px;
     font-size: 1.3em;
 }
 
-.info p span {
+#front>div:nth-child(1) p span {
     font-weight: 600;
     color: var(--col0);
 }
 
-.info::after, .info::before {
+#front>div:nth-child(1)::after, #front>div:nth-child(1)::before {
     content: "";
     width: 160px;
     height: 4px;
@@ -236,6 +243,7 @@ header {
     font-size: 1.3em;
     left: 69px;
     text-transform: uppercase;
+    margin: 20px 0;
 }
 
 .logo p span {
@@ -249,11 +257,6 @@ header {
 
 .name {
     margin: 15px 0 0 45px;
-}
-
-.name h2, .name p {
-    text-transform: uppercase;
-    margin: 0;
 }
 
 .name h2 {
@@ -337,7 +340,7 @@ i {
 
 /* Vertical  one */
 
-.business2 {
+.business-ver {
     display: flex;
     align-items: center;
     height: 100vh;
@@ -346,52 +349,47 @@ i {
     font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.business2 .front, .business2 .back {
+.business-ver .front-ver, .business-ver .back-ver {
     background-color: var(--dark);
     width: 280px;
     height: 480px;
     margin: 20px;
     border-radius: 25px;
     overflow: hidden;
+    color: #eee;
     position: relative;
 }
 
-.business2 svg {
+.business-ver svg {
     width: 50px;
 }
 
-.business2 h1, .business2 h2, .business2 p {
-    margin: 0;
-    color: #eee;
-}
-
-.business2 .red {
+.front-ver>div:nth-child(1) {
     height: 35%;
     background-color: var(--red);
 }
 
-.business2 .head {
+.front-ver>div:nth-child(1)>div {
     display: flex;
     justify-content: center;
     padding: 25px 0;
 }
 
-.business2 .head img {
+.front-ver>div:nth-child(1)>div img {
     width: 40px;
 }
 
-.business2 .head>div {
+.front-ver>div:nth-child(1)>div div {
     text-align: center;
     margin: 0 10px;
-    text-transform: uppercase;
 }
 
-.business2 .head>div p {
+.front-ver>div:nth-child(1)>div div p {
     font-size: .8rem;
     font-weight: 600;
 }
 
-.business2 .avatar {
+.front-ver>div:nth-child(2) {
     position: absolute;
     width: 50%;
     left: 50%;
@@ -400,7 +398,7 @@ i {
     text-align: center;
 }
 
-.business2 .img {
+.front-ver>div:nth-child(2) div {
     background-color: #bfc2c7;
     padding: 10px;
     box-sizing: border-box;
@@ -412,28 +410,27 @@ i {
     justify-content: center;
 }
 
-.business2 .img img {
+.front-ver>div:nth-child(2) div img {
     width: 80%;
     padding: 10px 0;
 }
 
-.business2 .avatar p:nth-of-type(1) {
-    text-transform: uppercase;
+.front-ver>div:nth-child(2) p:nth-of-type(1) {
     font-weight: 900;
 }
 
-.business2 .infos {
+.front-ver .infos {
     position: absolute;
     bottom: 5%;
     left: 5%;
 }
 
-.business2 .infos>div {
+.front-ver .infos>div {
     display: flex;
     margin: 5px;
 }
 
-.business2 .infos>div svg {
+.front-ver .infos>div svg {
     width: 25px;
     height: 25px;
     margin-right: 10px;
@@ -442,7 +439,7 @@ i {
     border-radius: 7px;
 }
 
-.business2 .infos>div p {
+.front-ver .infos>div p {
     font-size: .8rem;
     margin: 5px 0;
     font-weight: 500;
@@ -450,16 +447,16 @@ i {
 
 /* back*/
 
-.business2 .back .top {
+.back-ver>div:nth-child(1) {
     width: 100%;
     box-sizing: border-box;
     height: 70%;
-    background: url("e.webp") center;
+    background: url("./imgs/e.webp") center;
     filter: contrast(160%);
     position: relative;
 }
 
-.business2 .back .top::after {
+.back-ver>div:nth-child(1)::after {
     content: "";
     width: 100%;
     height: 100%;
@@ -468,16 +465,16 @@ i {
     background: linear-gradient(rgba(71, 11, 11, 0.8), rgba(240, 8, 8, 0.5));
 }
 
-.business2 .back .top {
+.back-ver>div:nth-child(1) {
     position: relative;
 }
 
-.business2 .back .top div img {
+.back-ver>div:nth-child(1) div img {
     width: 40px;
     margin: 10px;
 }
 
-.business2 .back .top div {
+.back-ver>div:nth-child(1) div {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -485,11 +482,9 @@ i {
     top: 40%;
     left: 19%;
     z-index: 11;
-    filter: contrast(80%);
-    text-transform: uppercase;
 }
 
-.webicon {
+.back-ver>div:nth-child(2) {
     background-color: var(--dark);
     border-radius: 50%;
     width: 70%;
@@ -502,13 +497,13 @@ i {
     justify-content: center;
 }
 
-.webicon div {
+.back-ver>div:nth-child(2) div {
     background-color: var(--red);
     border-radius: 50%;
     padding: 5px 4px 2px 5px;
 }
 
-.business2 .back>p {
+.back-ver>p {
     text-align: center;
     margin-top: 30%;
     color: var(--red);
