@@ -1,8 +1,9 @@
-# Business Card using canvas
+# Business Card 
 
-this design is inspired from a graphic design in Behance  : https://www.behance.net/gallery/93079931/Creative-Business-Card
+### Horizontal Business Card
+inspired from a graphic design in [Behance](https://www.behance.net/gallery/93079931/Creative-Business-Card)
 
-this done using : 
+done using : 
 
 ~ HTML / CSS / JS
 
@@ -12,5 +13,16 @@ this done using :
 
 ~ font awesome icons
 
+> view it on [Codepen](https://codepen.io/MohcineDev/pen/PoqyvQj)
+  
 
-- some updates are coming
+### Vertical Business Card
+inspired from a graphic design in [Behance](https://www.behance.net/gallery/98758733/business-card)
+
+
+done using : 
+
+~ HTML / CSS
+> view it on [Codepen](https://codepen.io/MohcineDev/pen/vYXeqZm)   
+    
+~ Hosted [HERE](https://mohcinedev.github.io/Business-Card/)
