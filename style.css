@@ -175,32 +175,39 @@ body, h2, p {
     border-radius: 20px 0 0 20px;
 }
 
-#front>div:nth-child(1) {
-    margin-top: 165px;
+#front>p {
+    margin-top: 155px;
     display: flex;
     justify-content: center;
-}
-
-#front>div:nth-child(1) p {
-    margin: -10px;
     font-size: 1.3em;
+    position: relative;
 }
 
-#front>div:nth-child(1) p span {
+#front p span {
     font-weight: 600;
     color: var(--col0);
 }
 
-#front>div:nth-child(1)::after, #front>div:nth-child(1)::before {
+#front>p::after, #front>p::before {
     content: "";
     width: 160px;
     height: 4px;
     background-color: var(--col);
     margin: 0 20px;
     border-radius: 4px;
+    top: calc(50% - 2px);
+    position: absolute;
 }
 
-.site {
+#front>p::before {
+    left: 10px;
+}
+
+#front>p::after {
+    right: 10px;
+}
+
+#front div {
     background-color: var(--col);
     color: rgb(230, 230, 230);
     width: 250px;
@@ -211,13 +218,13 @@ body, h2, p {
     left: 125px;
 }
 
-.site p {
+#front div p {
     margin: 0;
     font-size: 0.8em;
     padding: 2px;
 }
 
-#canvas0 {
+#front canvas {
     position: absolute;
     top: 55px;
     left: 100px;
@@ -227,26 +234,25 @@ body, h2, p {
     display: flex;
 }
 
-#back .logo {
+#back>div:nth-child(1) {
     width: 250px;
 }
 
-.logo canvas {
+#back>div:nth-child(1) canvas {
     position: absolute;
     left: -25px;
     top: 60px;
 }
 
-.logo p {
+#back>div:nth-child(1) p {
     position: absolute;
     top: 140px;
     font-size: 1.3em;
     left: 69px;
-    text-transform: uppercase;
     margin: 20px 0;
 }
 
-.logo p span {
+#back>div:nth-child(1) p span {
     font-weight: 600;
     color: var(--col0);
 }

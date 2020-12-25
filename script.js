@@ -1,7 +1,8 @@
 const body = document.querySelector('body')
 //get the span element 'LUXE'
-const green = document.querySelector('#front>div:nth-child(1) p span')
-const dark = document.querySelector('.site')
+//const green = document.querySelector('#front>div:nth-child(1) p span')
+const green = document.querySelector('#front span')
+const dark = document.querySelector('#front div')
 //get input color 
 const firstColor = document.querySelector('#firstColor')
 const secondColor = document.querySelector('#secondColor')
@@ -35,9 +36,9 @@ secondColor.addEventListener('change', function () {
 
 //--------------------
 
-const canvas = document.querySelector('#canvas0')
+const canvas = document.querySelector('#front canvas')
 const ctx = canvas.getContext('2d')
-const canvas1 = document.querySelector('#canvas1')
+const canvas1 = document.querySelector('#back canvas')
 const ctx1 = canvas1.getContext('2d')
 
 function drawlogo(c) {
@@ -72,8 +73,8 @@ function drawlogo(c) {
 
 drawlogo(ctx)
 drawlogo(ctx1)
-//---- Line -----------
 
+//---- Line -----------
 let ctx2 = canvas2.getContext('2d')
 let ctx3 = canvas3.getContext('2d')
 
@@ -93,8 +94,8 @@ function drawPath() {
     ctx3.beginPath()
     ctx3.moveTo(42, 34)
     ctx3.lineTo(3, 34)
-    ctx3.lineTo(3, 142)
-    ctx3.lineTo(42, 142)
+    ctx3.lineTo(3, 144)
+    ctx3.lineTo(42, 144)
     ctx3.strokeStyle = darkColor.backgroundColor
 
     ctx3.lineWidth = 2
