@@ -6,8 +6,8 @@ const dark = document.querySelector('#front div')
 //get input color 
 const firstColor = document.querySelector('#firstColor')
 const secondColor = document.querySelector('#secondColor')
-const next = document.querySelector('#next')
-const prev = document.querySelector('#prev')
+const next = document.querySelector('#next-btn')
+const prev = document.querySelector('#prev-btn')
 //initialize the inputs when the page reloaded
 firstColor.value = 'rgb(0,0,0)'
 secondColor.value = 'rgb(0,0,0)'
@@ -21,8 +21,8 @@ let greencolor = getComputedStyle(green)
 
 //change the var color in css with the selected one
 firstColor.addEventListener('change', function () {
+    console.log(body.style);
     body.style.setProperty('--col', firstColor.value)
-
     drawlogo(ctx)
     drawPath()
     drawlogo(ctx1)
