@@ -51,7 +51,7 @@ body, h2, p {
     padding: 10px;
 }
 
-.credit:after {
+.credit::after {
     box-sizing: border-box;
     content: "";
     border: 8px solid;
@@ -69,7 +69,8 @@ body, h2, p {
     right: -3px;
 }
 
-.bg-hover {
+.credit::before {
+    content: "";
     background-color: #1769ff;
     width: 100%;
     height: 100%;
@@ -80,13 +81,13 @@ body, h2, p {
     z-index: -1;
 }
 
-.credit:hover .bg-hover {
+.credit:hover::before {
     left: 0;
 }
 
-/*  */
+/* move btns // right left */
 
-#prev, #next {
+#prev-btn, #next-btn {
     border: 2px solid #ddd;
     top: 15%;
     opacity: .5;
@@ -98,21 +99,21 @@ body, h2, p {
     transition: .6s;
 }
 
-#prev:hover, #next:hover {
+#prev-btn:hover, #next-btn:hover {
     opacity: 0.8;
 }
 
-#next {
+#next-btn {
     right: 5%;
     position: absolute;
 }
 
-#prev {
+#prev-btn {
     right: -10%;
     position: absolute;
 }
 
-#prev::after, #next::after {
+#prev-btn::after, #next-btn::after {
     content: "";
     border: 15px solid;
     box-sizing: border-box;
@@ -123,12 +124,12 @@ body, h2, p {
     top: 4px;
 }
 
-#next::after {
+#next-btn::after {
     transform: rotate(-90deg);
     right: -5px;
 }
 
-#prev::after {
+#prev-btn::after {
     transform: rotate(90deg);
     left: -5px;
 }
@@ -142,6 +143,7 @@ body, h2, p {
     height: 100vh;
     flex-wrap: wrap;
     position: relative;
+    margin:0 10px;
 }
 
 #front, #back {
@@ -286,7 +288,7 @@ body, h2, p {
     margin: 25px 0 0 45px;
     /* add this so the z-index can have an effect on this element*/
     position: relative;
-    /*set z-index:2 to make it above the canvas and you can click the links*/
+    /*set z-index:2 to make it above the canvas so you can click the links*/
     z-index: 2;
 }
 
@@ -340,7 +342,6 @@ i {
 .onGitHub a {
     color: var(--col0);
 }
- 
 
 .move {
     animation-name: moving;
@@ -353,12 +354,9 @@ i {
         left: calc(50% - 40px);
     }
 }
+ 
 
-/* add some responsiveness*/
-
-@media screen and (max-width: 560px) {}
-
-/* Vertical  one */
+/* Vertical business card */
 
 .business-ver {
     display: flex;
